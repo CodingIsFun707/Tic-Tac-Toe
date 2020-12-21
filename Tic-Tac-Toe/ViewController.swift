@@ -80,7 +80,7 @@ class ViewController: UIViewController {
                 }
                 
                 if C2 == 2 && C1 == 2 {
-                    ATR = [nil]
+                    ATR = [nil,nil]
                     ESIF = true
                 }
                 

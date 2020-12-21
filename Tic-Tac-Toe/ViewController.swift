@@ -59,6 +59,7 @@ class ViewController: UIViewController {
             var C2 = 0
             var IFT = true //full form = IsFirstTime
             var IFSF = false //full form IsFirstSquareFilled
+            var ISSF = false //full form IsSideSquareFilled
             var ATR: [Any?] = []
             //full forms = Counter(1 or 2)
             while ESIF != true {
@@ -75,11 +76,18 @@ class ViewController: UIViewController {
                 if GameSoFar[C1][C2] == false && IFSF == true {
                     ATR = [C1,C2]
                     ESIF = true
+                } else {
+                    ISSF = true
                 }
                 
                 if C2 == 2 && C1 != 2 {
                     C2 = 0
                     C1 += 1
+                }
+                
+                if GameSoFar[C1][C2] == false && ISSF != true {
+                    ATR = [C1,C2]
+                    ESIF = true
                 }
                 
                 if C2 == 2 && C1 == 2 {
@@ -88,6 +96,7 @@ class ViewController: UIViewController {
                 }
                 
                 IFT = false
+                ISSF = false
             }
             return ATR
         }

@@ -19,7 +19,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var Square7: UIButton!
     @IBOutlet weak var Square8: UIButton!
     @IBOutlet weak var Square9: UIButton!
-    
+    @IBOutlet weak var GOL: UILabel!
+    //full form GameOverLabel
     var S1IF = false
     var S2IF = false
     var S3IF = false
@@ -41,7 +42,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        GOL.text = ""
     }
     @IBAction func TicTacToeSquareWasPressed(_ sender: UIButton) {
         
@@ -51,6 +52,13 @@ class ViewController: UIViewController {
             button.isUserInteractionEnabled = false
             button.setTitleColor(#colorLiteral(red: 0, green: 0.3289367855, blue: 0.5761557221, alpha: 1), for: .normal)
             button.setBackgroundImage(#imageLiteral(resourceName: "crossImage"), for: .normal)
+        }
+        
+        func RestartButton(button: UIButton) {
+            button.isUserInteractionEnabled = true
+            button.setTitleColor(#colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1), for: .normal)
+            button.backgroundColor = #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1)
+            button.setBackgroundImage(nil, for: .normal)
         }
         
         func FindEmptySpace() -> Array<Any?> {
@@ -99,6 +107,40 @@ class ViewController: UIViewController {
                 ISSF = false
             }
             return ATR
+        }
+        
+        func LookForUserWin(A: [[Bool]]) -> Bool {
+            var Win = false
+            
+            if A[0][0] == true && A[0][1] == true && A[0][2] == true {
+                Win = true
+            }
+            if A[1][0] == true && A[1][1] == true && A[1][2] == true {
+                Win = true
+            }
+            if A[2][0] == true && A[2][1] == true && A[2][2] == true {
+                Win = true
+            }
+            
+            if A[0][0] == true && A[1][0] == true && A[2][0] == true {
+                Win = true
+            }
+            if A[0][1] == true && A[1][1] == true && A[2][1] == true {
+                Win = true
+            }
+            if A[0][2] == true && A[1][2] == true && A[2][2] == true {
+                Win = true
+            }
+            
+            if A[0][0] == true && A[1][1] == true && A[2][0] == true {
+                Win = true
+            }
+            if A[0][2] == true && A[1][1] == true && A[2][2] == true {
+                Win = true
+            }
+            
+            
+            return Win
         }
         
         
@@ -207,6 +249,54 @@ class ViewController: UIViewController {
             
         }
         
+        if GameSoFar[0][0] == true {
+            if GameSoFar[0][1] == true {
+                if GameSoFar[0][2] == true {
+                    if GameSoFar[1][0] == true {
+                        if GameSoFar[1][1] == true {
+                            if GameSoFar[1][2] == true {
+                                if GameSoFar[2][0] == true {
+                                    if GameSoFar[2][1] == true {
+                                        if GameSoFar[2][2] == true {
+                                            GOL.text = ""
+                                            RestartButton(button: Square1)
+                                            RestartButton(button: Square2)
+                                            RestartButton(button: Square3)
+                                            RestartButton(button: Square4)
+                                            RestartButton(button: Square5)
+                                            RestartButton(button: Square6)
+                                            RestartButton(button: Square7)
+                                            RestartButton(button: Square8)
+                                            RestartButton(button: Square9)
+                                            
+                                            S1IF = false
+                                            S2IF = false
+                                            S3IF = false
+                                            S4IF = false
+                                            S5IF = false
+                                            S6IF = false
+                                            S7IF = false
+                                            S8IF = false
+                                            S9IF = false
+                                            
+                                            GameSoFar[0][0] = S1IF
+                                            GameSoFar[0][1] = S2IF
+                                            GameSoFar[0][2] = S3IF
+                                            GameSoFar[1][0] = S4IF
+                                            GameSoFar[1][1] = S5IF
+                                            GameSoFar[1][2] = S6IF
+                                            GameSoFar[2][0] = S7IF
+                                            GameSoFar[2][1] = S8IF
+                                            GameSoFar[2][2] = S9IF
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
         
         
     }

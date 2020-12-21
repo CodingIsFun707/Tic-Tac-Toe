@@ -114,11 +114,19 @@
                                     <action selector="TicTacToeSquareWasPressed:" destination="Mi4-U2-1n1" eventType="touchUpInside" id="rUf-l5-024"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Game Over" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Opb-L8-mCz">
+                                <rect key="frame" x="138" y="664" width="138" height="98"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="sYp-IP-FHl"/>
                     </view>
                     <connections>
+                        <outlet property="GOL" destination="Opb-L8-mCz" id="eWX-OW-544"/>
                         <outlet property="Square1" destination="gQY-3R-HZ0" id="vPX-FZ-Aaz"/>
                         <outlet property="Square2" destination="VjL-Pl-Zyt" id="dxY-vM-7lr"/>
                         <outlet property="Square3" destination="mZb-It-Wrz" id="hpn-hl-xDc"/>
@@ -132,7 +140,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Bn-0w-uOq" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2100" y="-296"/>
+            <point key="canvasLocation" x="-1738" y="-362"/>
         </scene>
     </scenes>
 </document>

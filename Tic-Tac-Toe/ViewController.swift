@@ -57,13 +57,14 @@ class ViewController: UIViewController {
             var ESIF = false // full form = EmptySpaceIsFound
             var C1 = 0
             var C2 = 0
+            var IFT = true //full form = IsFirstTime
             var ATR: [Any?] = []
             //full forms = Counter(1 or 2)
             while ESIF != true {
                 
-                if GameSoFar[C1][C2] == false {
-                ATR = [C1,C2]
-                ESIF = true
+                if GameSoFar[C1][C2] == false && IFT == true {
+                    ATR = [C1,C2]
+                    ESIF = true
                 }
                 
                 C2 += 1
@@ -82,6 +83,8 @@ class ViewController: UIViewController {
                     ATR = [nil]
                     ESIF = true
                 }
+                
+                IFT = false
             }
             return ATR
         }

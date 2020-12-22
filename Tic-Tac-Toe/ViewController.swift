@@ -74,7 +74,7 @@ class ViewController: UIViewController {
             Logic.SwitchOnV1AndV2AsInt(Val1: V1, Val2: V2, Data1: [S1IF, S2IF, S3IF, S4IF, S5IF, S6IF, S7IF, S8IF, S9IF], Data2: [Square1, Square2, Square3, Square4, Square5, Square6, Square7, Square8, Square9])
             
         }
-        
+        // this code for some reason never runs
         if GameSoFar[0][0] == true {
             if GameSoFar[0][1] == true {
                 if GameSoFar[0][2] == true {
@@ -123,14 +123,21 @@ class ViewController: UIViewController {
                 }
             }
         }
-        
+        // this code for some reason never runs
         if Utils.LookForUserWin(A: GameSoFar) == true {
             GOL.text = "You Win!"
             
         }
         
     }
-    
+    /*
+     The main issue is that only the first square is ever filled
+     It will end up looking like this no matter what even if the first square is pressed
+     [O][X][X]
+     [X][X][X]
+     [X][X][X]
+      
+     */
 
 
 }

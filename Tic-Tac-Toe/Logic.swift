@@ -11,7 +11,7 @@ import UIKit
 struct Logic {
     static func SwitchOnCSTHBP(CS: String?, Data1: [Bool], Data2: [UIButton]) {
         
-        var Data3 = Data1
+        var Data3 = [Data1[0], Data1[1], Data1[2], Data1[3], Data1[4], Data1[5], Data1[6], Data1[7], Data1[8]]
         
         switch Int(CS!) {
         case 1:
@@ -46,11 +46,11 @@ struct Logic {
         }
     }
     
-    static func SwitchOnV1AndV2AsInt(V1: Any?, V2: Any?, Data1: [Bool], Data2: [UIButton]) {
+    static func SwitchOnV1AndV2AsInt(Val1: Any?, Val2: Any?, Data1: [Bool], Data2: [UIButton]) {
         
-        var Data3 = Data1
+        var Data3 = [Data1[0], Data1[1], Data1[2], Data1[3], Data1[4], Data1[5], Data1[6], Data1[7], Data1[8]]
         
-        switch [V1 as! Int,V2 as! Int] {
+        switch [Val1 as! Int,Val2 as! Int] {
         case [0,0]:
             Data2[0].setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
             Data2[0].setBackgroundImage(#imageLiteral(resourceName: "circleImage"), for: .normal)

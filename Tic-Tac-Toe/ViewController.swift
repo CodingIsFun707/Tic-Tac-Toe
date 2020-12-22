@@ -71,57 +71,7 @@ class ViewController: UIViewController {
             
             GameSoFar[V1 as! Int][V2 as! Int] = true
             
-            
-            
-            switch [V1 as! Int,V2 as! Int] {
-            case [0,0]:
-                Square1.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
-                Square1.setBackgroundImage(#imageLiteral(resourceName: "circleImage"), for: .normal)
-                S1IF = true
-                Square1.isUserInteractionEnabled = false
-            case [0,1]:
-                Square2.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
-                Square2.setBackgroundImage(#imageLiteral(resourceName: "circleImage"), for: .normal)
-                S2IF = true
-                Square2.isUserInteractionEnabled = false
-            case [0,2]:
-                Square3.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
-                Square3.setBackgroundImage(#imageLiteral(resourceName: "circleImage"), for: .normal)
-                S3IF = true
-                Square3.isUserInteractionEnabled = false
-            case [1,0]:
-                Square4.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
-                Square4.setBackgroundImage(#imageLiteral(resourceName: "circleImage"), for: .normal)
-                S4IF = true
-                Square4.isUserInteractionEnabled = false
-            case [1,1]:
-                Square5.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
-                Square5.setBackgroundImage(#imageLiteral(resourceName: "circleImage"), for: .normal)
-                S5IF = true
-                Square5.isUserInteractionEnabled = false
-            case [1,2]:
-                Square6.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
-                Square6.setBackgroundImage(#imageLiteral(resourceName: "circleImage"), for: .normal)
-                S6IF = true
-                Square6.isUserInteractionEnabled = false
-            case [2,0]:
-                Square7.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
-                Square7.setBackgroundImage(#imageLiteral(resourceName: "circleImage"), for: .normal)
-                S7IF = true
-                Square7.isUserInteractionEnabled = false
-            case [2,1]:
-                Square8.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
-                Square8.setBackgroundImage(#imageLiteral(resourceName: "circleImage"), for: .normal)
-                S8IF = true
-                Square8.isUserInteractionEnabled = false
-            case [2,2]:
-                Square9.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
-                Square9.setBackgroundImage(#imageLiteral(resourceName: "circleImage"), for: .normal)
-                S9IF = true
-                Square9.isUserInteractionEnabled = false
-            default:
-                print("error")
-            }
+            Logic.SwitchOnV1AndV2AsInt(Val1: V1, Val2: V2, Data1: [S1IF, S2IF, S3IF, S4IF, S5IF, S6IF, S7IF, S8IF, S9IF], Data2: [Square1, Square2, Square3, Square4, Square5, Square6, Square7, Square8, Square9])
             
         }
         

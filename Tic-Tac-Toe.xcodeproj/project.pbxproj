@@ -13,7 +13,8 @@
 		9F4E95F125902E30008D6C38 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F4E95EF25902E30008D6C38 /* Main.storyboard */; };
 		9F4E95F325902E32008D6C38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F4E95F225902E32008D6C38 /* Assets.xcassets */; };
 		9F4E95F625902E32008D6C38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F4E95F425902E32008D6C38 /* LaunchScreen.storyboard */; };
-		9FAD48E1259172E900B61ADC /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAD48E0259172E900B61ADC /* Functions.swift */; };
+		9FAD48E325917D6E00B61ADC /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAD48E225917D6E00B61ADC /* Utils.swift */; };
+		9FAD48E525917DB100B61ADC /* Logic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAD48E425917DB100B61ADC /* Logic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +26,8 @@
 		9F4E95F225902E32008D6C38 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9F4E95F525902E32008D6C38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9F4E95F725902E32008D6C38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9FAD48E0259172E900B61ADC /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
+		9FAD48E225917D6E00B61ADC /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		9FAD48E425917DB100B61ADC /* Logic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +67,8 @@
 				9F4E95F225902E32008D6C38 /* Assets.xcassets */,
 				9F4E95F425902E32008D6C38 /* LaunchScreen.storyboard */,
 				9F4E95F725902E32008D6C38 /* Info.plist */,
-				9FAD48E0259172E900B61ADC /* Functions.swift */,
+				9FAD48E225917D6E00B61ADC /* Utils.swift */,
+				9FAD48E425917DB100B61ADC /* Logic.swift */,
 			);
 			path = "Tic-Tac-Toe";
 			sourceTree = "<group>";
@@ -141,10 +144,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FAD48E325917D6E00B61ADC /* Utils.swift in Sources */,
+				9FAD48E525917DB100B61ADC /* Logic.swift in Sources */,
 				9F4E95EE25902E30008D6C38 /* ViewController.swift in Sources */,
 				9F4E95EA25902E30008D6C38 /* AppDelegate.swift in Sources */,
 				9F4E95EC25902E30008D6C38 /* SceneDelegate.swift in Sources */,
-				9FAD48E1259172E900B61ADC /* Functions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -51,130 +51,37 @@ class ViewController: UIViewController {
         
         let CSTHBP = sender.currentTitle // full form = CurrentSquareThatHasBeenPressed
         
-        func UpdateButton(button: UIButton) {
-            button.isUserInteractionEnabled = false
-            button.setTitleColor(#colorLiteral(red: 0, green: 0.3289367855, blue: 0.5761557221, alpha: 1), for: .normal)
-            button.setBackgroundImage(#imageLiteral(resourceName: "crossImage"), for: .normal)
-        }
         
-        func RestartButton(button: UIButton) {
-            button.isUserInteractionEnabled = true
-            button.setTitleColor(#colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1), for: .normal)
-            button.backgroundColor = #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1)
-            button.setBackgroundImage(nil, for: .normal)
-        }
-        
-        func FindEmptySpace() -> Array<Any?> {
-            var ESIF = false // full form = EmptySpaceIsFound
-            var C1 = 0
-            var C2 = 0
-            var IFT = true //full form = IsFirstTime
-            var IFSF = false //full form IsFirstSquareFilled
-            var ISSF = false //full form IsSideSquareFilled
-            var ATR: [Any?] = []
-            //full forms = Counter(1 or 2)
-            while ESIF != true {
-                
-                if GameSoFar[C1][C2] == false && IFT == true {
-                    ATR = [C1,C2]
-                    ESIF = true
-                } else {
-                    IFSF = true
-                }
-                
-                C2 += 1
-                
-                if GameSoFar[C1][C2] == false && IFSF == true {
-                    ATR = [C1,C2]
-                    ESIF = true
-                } else {
-                    ISSF = true
-                }
-                
-                if C2 == 2 && C1 != 2 {
-                    C2 = 0
-                    C1 += 1
-                }
-                
-                if GameSoFar[C1][C2] == false && ISSF != true {
-                    ATR = [C1,C2]
-                    ESIF = true
-                }
-                
-                if C2 == 2 && C1 == 2 {
-                    ATR = [nil,nil]
-                    ESIF = true
-                }
-                
-                IFT = false
-                ISSF = false
-            }
-            return ATR
-        }
-        
-        func LookForUserWin(A: [[Bool]]) -> Bool {
-            var Win = false
-            
-            if A[0][0] == true && A[0][1] == true && A[0][2] == true {
-                Win = true
-            }
-            if A[1][0] == true && A[1][1] == true && A[1][2] == true {
-                Win = true
-            }
-            if A[2][0] == true && A[2][1] == true && A[2][2] == true {
-                Win = true
-            }
-            
-            if A[0][0] == true && A[1][0] == true && A[2][0] == true {
-                Win = true
-            }
-            if A[0][1] == true && A[1][1] == true && A[2][1] == true {
-                Win = true
-            }
-            if A[0][2] == true && A[1][2] == true && A[2][2] == true {
-                Win = true
-            }
-            
-            if A[0][0] == true && A[1][1] == true && A[2][0] == true {
-                Win = true
-            }
-            if A[0][2] == true && A[1][1] == true && A[2][2] == true {
-                Win = true
-            }
-            
-            
-            return Win
-        }
         
         
         
         switch Int(CSTHBP!) {
         case 1:
-            UpdateButton(button: Square1)
+            Utils.UpdateButton(button: Square1)
             S1IF = true
         case 2:
-            UpdateButton(button: Square2)
+            Utils.UpdateButton(button: Square2)
             S2IF = true
         case 3:
-            UpdateButton(button: Square3)
+            Utils.UpdateButton(button: Square3)
             S3IF = true
         case 4:
-            UpdateButton(button: Square4)
+            Utils.UpdateButton(button: Square4)
             S4IF = true
         case 5:
-            UpdateButton(button: Square5)
+            Utils.UpdateButton(button: Square5)
             S5IF = true
         case 6:
-            UpdateButton(button: Square6)
+            Utils.UpdateButton(button: Square6)
             S6IF = true
         case 7:
-            UpdateButton(button: Square7)
+            Utils.UpdateButton(button: Square7)
             S7IF = true
         case 8:
-            UpdateButton(button: Square8)
+            Utils.UpdateButton(button: Square8)
             S8IF = true
         case 9:
-            UpdateButton(button: Square9)
+            Utils.UpdateButton(button: Square9)
             S9IF = true
         default:
             print("error")
@@ -191,8 +98,8 @@ class ViewController: UIViewController {
         GameSoFar[2][2] = S9IF
         
         
-        let V1 = FindEmptySpace()[0]
-        let V2 = FindEmptySpace()[1]
+        let V1 = Utils.FindEmptySpace(A: GameSoFar)[0]
+        let V2 = Utils.FindEmptySpace(A:GameSoFar)[1]
         
         if V1 != nil && V2 != nil {
             
@@ -262,15 +169,15 @@ class ViewController: UIViewController {
                                     if GameSoFar[2][1] == true {
                                         if GameSoFar[2][2] == true {
                                             GOL.text = "Its A Tie!"
-                                            RestartButton(button: Square1)
-                                            RestartButton(button: Square2)
-                                            RestartButton(button: Square3)
-                                            RestartButton(button: Square4)
-                                            RestartButton(button: Square5)
-                                            RestartButton(button: Square6)
-                                            RestartButton(button: Square7)
-                                            RestartButton(button: Square8)
-                                            RestartButton(button: Square9)
+                                            Utils.RestartButton(button: Square1)
+                                            Utils.RestartButton(button: Square2)
+                                            Utils.RestartButton(button: Square3)
+                                            Utils.RestartButton(button: Square4)
+                                            Utils.RestartButton(button: Square5)
+                                            Utils.RestartButton(button: Square6)
+                                            Utils.RestartButton(button: Square7)
+                                            Utils.RestartButton(button: Square8)
+                                            Utils.RestartButton(button: Square9)
                                             
                                             S1IF = false
                                             S2IF = false
@@ -301,7 +208,7 @@ class ViewController: UIViewController {
             }
         }
         
-        if LookForUserWin(A: GameSoFar) == true {
+        if Utils.LookForUserWin(A: GameSoFar) == true {
             GOL.text = "You Win!"
             
         }

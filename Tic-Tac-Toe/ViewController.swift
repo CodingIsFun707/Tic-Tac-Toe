@@ -50,42 +50,8 @@ class ViewController: UIViewController {
     @IBAction func TicTacToeSquareWasPressed(_ sender: UIButton) {
         
         let CSTHBP = sender.currentTitle // full form = CurrentSquareThatHasBeenPressed
-        
-        
-        
-        
-        
-        switch Int(CSTHBP!) {
-        case 1:
-            Utils.UpdateButton(button: Square1)
-            S1IF = true
-        case 2:
-            Utils.UpdateButton(button: Square2)
-            S2IF = true
-        case 3:
-            Utils.UpdateButton(button: Square3)
-            S3IF = true
-        case 4:
-            Utils.UpdateButton(button: Square4)
-            S4IF = true
-        case 5:
-            Utils.UpdateButton(button: Square5)
-            S5IF = true
-        case 6:
-            Utils.UpdateButton(button: Square6)
-            S6IF = true
-        case 7:
-            Utils.UpdateButton(button: Square7)
-            S7IF = true
-        case 8:
-            Utils.UpdateButton(button: Square8)
-            S8IF = true
-        case 9:
-            Utils.UpdateButton(button: Square9)
-            S9IF = true
-        default:
-            print("error")
-        }
+
+        Logic.SwitchOnCSTHBP(CS: CSTHBP, Data1: [S1IF, S2IF, S3IF, S4IF, S5IF, S6IF, S7IF, S8IF, S9IF], Data2: [Square1, Square2, Square3, Square4, Square5, Square6, Square7, Square8, Square9])
         
         GameSoFar[0][0] = S1IF
         GameSoFar[0][1] = S2IF

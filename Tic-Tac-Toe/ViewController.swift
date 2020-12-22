@@ -21,6 +21,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var Square9: UIButton!
     @IBOutlet weak var GOL: UILabel!
     //full form GameOverLabel
+
     var S1IF = false
     var S2IF = false
     var S3IF = false
@@ -258,7 +259,7 @@ class ViewController: UIViewController {
                                 if GameSoFar[2][0] == true {
                                     if GameSoFar[2][1] == true {
                                         if GameSoFar[2][2] == true {
-                                            GOL.text = ""
+                                            GOL.text = "Its A Tie!"
                                             RestartButton(button: Square1)
                                             RestartButton(button: Square2)
                                             RestartButton(button: Square3)
@@ -298,6 +299,10 @@ class ViewController: UIViewController {
             }
         }
         
+        if LookForUserWin(A: GameSoFar) == true {
+            GOL.text = "You Win!"
+            
+        }
         
     }
     

@@ -102,5 +102,3 @@ struct Logic {
     }
     
 }
-
-// Data1[<#Number#>]

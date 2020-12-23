@@ -42,16 +42,17 @@ class ViewController: UIViewController {
     ]
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         GOL.text = ""
     }
     @IBAction func TicTacToeSquareWasPressed(_ sender: UIButton) {
         
+        var A = [S1IF, S2IF, S3IF, S4IF, S5IF, S6IF, S7IF, S8IF, S9IF]
+        var SA: [UIButton] = [Square1, Square2, Square3, Square4, Square5, Square6, Square7, Square8, Square9]
         let CSTHBP = sender.currentTitle // full form = CurrentSquareThatHasBeenPressed
 
-        Logic.SwitchOnCSTHBP(CS: CSTHBP, Data1: [S1IF, S2IF, S3IF, S4IF, S5IF, S6IF, S7IF, S8IF, S9IF], Data2: [Square1, Square2, Square3, Square4, Square5, Square6, Square7, Square8, Square9])
+        Logic.SwitchOnCSTHBP(CS: CSTHBP, Data1: &A, Data2: SA)
         
         GameSoFar[0][0] = S1IF
         GameSoFar[0][1] = S2IF
@@ -71,18 +72,26 @@ class ViewController: UIViewController {
             
             GameSoFar[V1 as! Int][V2 as! Int] = true
             
-            Logic.SwitchOnV1AndV2AsInt(Val1: V1, Val2: V2, Data1: [S1IF, S2IF, S3IF, S4IF, S5IF, S6IF, S7IF, S8IF, S9IF], Data2: [Square1, Square2, Square3, Square4, Square5, Square6, Square7, Square8, Square9])
+            Logic.SwitchOnV1AndV2AsInt(Val1: V1, Val2: V2, Data1: &A, Data2: SA)
             
         }
         // this code for some reason never runs
         if GameSoFar[0][0] == true {
+             print("1")
             if GameSoFar[0][1] == true {
+                 print("2")
                 if GameSoFar[0][2] == true {
+                     print("3")
                     if GameSoFar[1][0] == true {
+                         print("4")
                         if GameSoFar[1][1] == true {
+                             print("5")
                             if GameSoFar[1][2] == true {
+                                 print("6")
                                 if GameSoFar[2][0] == true {
+                                     print("7")
                                     if GameSoFar[2][1] == true {
+                                         print("<#String#>")
                                         if GameSoFar[2][2] == true {
                                             GOL.text = "Its A Tie!"
                                             Utils.RestartButton(button: Square1)
@@ -114,6 +123,7 @@ class ViewController: UIViewController {
                                             GameSoFar[2][0] = S7IF
                                             GameSoFar[2][1] = S8IF
                                             GameSoFar[2][2] = S9IF
+                                            print("A tie has occured")
                                         }
                                     }
                                 }
@@ -141,4 +151,3 @@ class ViewController: UIViewController {
 
 
 }
-
